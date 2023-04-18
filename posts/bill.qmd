@@ -1,0 +1,39 @@
+---
+title: "Billboard Top 100's in 2000"
+image: bill.png
+---
+
+This analysis is done based on billboard Top 100 Statistics in the year 2000 and looks at #1 Hit Singles who's stayed at #1 the longest.
+
+```{r}
+library(tidyverse)
+library(lubridate)
+library(skimr)
+library(survival)
+library(survminer)
+library(flextable)
+library(DT)
+```
+
+```{r}
+ds = billboard
+ds=billboard %>% gather(key=week, value=rank, wk1:wk76)
+
+ds$week=as.numeric(gsub("wk","",ds$week))
+
+
+ds = ds %>%
+filter(rank==1) %>% group_by(artist,track) %>% summarize(weeksAtNumberOne=n()) %>% arrange(desc(weeksAtNumberOne))
+
+as_flextable(ds)
+
+```
+
+<style>
+nav {
+  background: url("https://www.shutterstock.com/shutterstock/videos/1069623523/preview/stock-footage-melbourne-australia-mar-motorized-moving-shot-of-new-albums-released-in-spotify-app.mp4") no-repeat top center fixed;
+  background-size: cover;
+  height: 50vh;
+  width: 100%;
+}
+</style>

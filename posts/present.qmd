@@ -1,0 +1,47 @@
+---
+title: "Are you seeking Business Intelligence & Automated Solutions?"
+image: present.png
+format: 
+  revealjs:
+    theme: serif
+    scrollable: true
+    preview-links: true
+---
+
+::: {.panel-tabset}
+
+### Overview
+
+Hello, I am CorDarryl Hall and work as a Business Intelligence Manager. Some of my favorite things about being in this role consists of the following: 
+
+- Working with Data Analytics: I am typically responsible for providing insights into the company's operations, and as such, a strong background in data analytics is essential. This gives me the opportunity to work in data mining, data modeling, data visualization, and other related areas.
+- Discussing Business Strategy: I continue  align their department's goals with the broader business strategy. This gives tremendous opportunities for cross functional collaboration. 
+- Utilizing Industry Knowledge: industry-specific trends and challenges allows provide valuable insights to the company through creative channels.
+
+### CorDarryl's Strengths
+
+
+- Technical expertise: CorDarryl has a great amount of experience exhibiting technical skills such as data mining, data modeling, data visualization, and data analysis in his current and past employment experiences. He also has a familiarity with data warehousing, data integration, and data governance concepts.
+- Business acumen & Communication skills: CorDarryl takes the time to gain a deep understanding of the organization’s goals, objectives, and key performance indicators. He then translate business needs into data-driven solutions that can help drive the organization’s successes by communicating complex technical information to non-technical stakeholders in a clear and concise manner. CorDarryl has created several reporting dashboards that are easy to understand and actionable.
+- Leadership and management skills: CorDarryl has experience managing teams and leading projects. He’s managed small teams of data analysts, data scientists, and business analysts to ensure that their work aligns with the organization’s goals.
+- Strategic thinking: CorDarryl has a strategic mindset and has been able to anticipate the organization’s future needs. The has made continuous efforts to identify opportunities for improvement and make data-driven recommendations to drive growth.
+- Problem-solving skills: CorDarryl has proven his ability to be able to identify and solve complex business problems using data. He was able identify data patterns and trends that can help the organization make informed decisions.
+- Project management skills: CorDarryl has the experience managing projects from start to finish. He was able to define project goals, scope, timelines, and budgets, and ensure that projects were delivered on time and within budget.
+
+
+### Other projects
+
+Ken Jee (YouTuber/Data Scientist) Subscriber Segmentation Project [Preview](https://prezi.com/view/1HsJCohA0HNqoRKhprAj/){preview-link="true"}
+
+Purpose: The purpose of this project was to show the subscriber segmentation dataset behind his YouTube channel. After researching and analyzing the dataset, I’ve helped him answer the following: 
+
+- Where throughout the world are most of your subscribers? 
+      - Continue to create more content here  
+- What topics are the most interesting to these subscribers? 
+      - Continue to create content in these areas
+- How long are users watching these videos? 
+      - Should I create short or long videos ? 
+      
+Check out the content to learn more about Ken Jee and his subscribers
+
+:::

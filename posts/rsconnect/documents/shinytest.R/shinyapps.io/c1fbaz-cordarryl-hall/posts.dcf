@@ -1,0 +1,13 @@
+name: posts
+title: posts
+username:
+account: c1fbaz-cordarryl-hall
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 8757613
+bundleId: 7045539
+url: https://c1fbaz-cordarryl-hall.shinyapps.io/posts/
+when: 1680573429.79318
+lastSyncTime: 1680573429.79319
+asMultiple: FALSE
+asStatic: FALSE

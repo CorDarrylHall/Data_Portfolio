@@ -1,0 +1,37 @@
+---
+title: "Expected Population Growth (Inspired by TidyTuesday dataset)"
+image: ttue.png
+---
+
+This analysis looks at the total figures for the global population and has taken into account is how the size of the population will evolve in different regions and countries of the world.
+
+```{r}
+library(tidyverse)
+library(lubridate)
+library(skimr)
+library(survival)
+library(survminer)
+```
+
+```{r}
+thePath="/Users/cordarrylhall/CorDarryl Hall Data Portfolio/CorDarryl Hall Data Portfolio"
+
+ds=read_csv(paste(thePath,"Projections-of-the-world-population-until-2100-by-the-Wittgenstein-Centre.csv",sep="/"))
+
+
+names(ds)
+head(ds)
+skim(ds)
+```
+
+```{r}
+ds %>% 
+
+ggplot(aes(x = ds$Entity, y = ds$PopulationTotal_SSP2)) + geom_boxplot(color="black",fill="cyan4") + ggtitle("Expected Population Growth by Region") + xlab("Entity") + ylab("Population") + theme(axis.text.x = element_text(angle = 90, vjust = 0.3, hjust=0.7))
+```
+
+```{r}
+ds %>% ggplot(aes(x=PopulationTotal_SSP2)) +
+
+ggtitle(" Expected Population Growth by Region") + geom_histogram(fill="cyan4",color="black",bins = 20) + facet_wrap(.~Entity)
+```

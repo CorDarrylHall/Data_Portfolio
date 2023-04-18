@@ -1,0 +1,40 @@
+---
+title: "Labor Utilization Dashboard"
+
+listing:
+  contents: posts
+  sort: "date desc"
+  type: grid
+  categories: false
+  sort-ui: false
+  filter-ui: false
+page-layout: article
+title-block-banner: false 
+image: Pbi1.png
+---
+
+The Power BI Dashboard that I am presenting here is a real-life example that I created for a previous organization. This dashboard was designed to provide an overview of key performance indicators (KPIs) and metrics that were relevant to the organization's goals and objectives.
+
+The Power BI Dashboard was divided into several sections, each presenting different types of data and insights. One section displayed revenue and expenses data, providing an at-a-glance overview of the organization's financial performance. Another section focused on sales data, with information about top-selling products, sales by region, and sales trends over time.
+
+The dashboard also included a section that provided a summary of customer feedback and satisfaction ratings, which was crucial for the organization's customer-centric approach. There was a separate section that showed employee engagement and retention rates, which is a critical metric for measuring the effectiveness of human resources strategies.
+
+The Power BI Dashboard was designed to be interactive and user-friendly, allowing users to drill down into the data and explore different perspectives. Users could filter the data by time period, region, or product, allowing them to focus on specific areas of interest.
+
+Overall, the Power BI Dashboard was a valuable tool for the organization, enabling decision-makers to monitor performance, identify trends, and make data-driven decisions. It provided a comprehensive view of the organization's operations, from financials to customer and employee satisfaction, allowing the organization to take a holistic approach to performance management.
+
+![](images/LAS.png)
+
+-   Labor Application Summary: This labor utilization summary provides an overview of how effectively this organization is utilizing its labor resources. It includes information such as the number of hours worked by employees, their productivity levels, the cost of labor, and any overtime or other labor-related expenses.
+
+The labor utilization summary also includes information about the types of work being performed by employees, such as project-specific tasks or ongoing operational duties. This information can help management make informed decisions about staffing levels, resource allocation, and productivity improvement initiatives.
+
+Overall, this labor utilization summary is a useful tool for this organization to evaluate how efficiently they are utilizing their labor resources, identify areas where improvements can be made, and make informed decisions to optimize their workforce.
+
+![](images/LARS.png)
+
+-   Labor Application Resources: This labor utilization resources tab provides several detailed resources utilization tables which includes information such as the number of hours worked by employees, their productivity levels, the cost of labor, and any overtime or other labor-related expenses.
+
+![](images/LADS.png)
+
+-   Labor Application Details: This labor utilization resources tab provides several detailed resources utilization tables which includes information such as the number of hours worked by employees, their productivity levels, the cost of labor, and any overtime or other labor-related expenses summarized by Project & Resource Groups.

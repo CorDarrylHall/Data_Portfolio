@@ -1,0 +1,37 @@
+[
+  {
+    "listing": "/posts/powerbi.html",
+    "items": []
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/present.html",
+      "/posts/bill.html",
+      "/posts/sank.html",
+      "/posts/le.html",
+      "/posts/interactive.html",
+      "/posts/GoT.html",
+      "/posts/powerbilhr.html",
+      "/posts/powerbila.html",
+      "/posts/Netflix Survival.html",
+      "/posts/powerbi.html",
+      "/posts/ORMATH.html"
+    ]
+  },
+  {
+    "listing": "/interactive.html",
+    "items": [
+      "/docs/InteractiveFR.html",
+      "/docs/ORMATH22.html"
+    ]
+  },
+  {
+    "listing": "/posts/powerbila.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/powerbilhr.html",
+    "items": []
+  }
+]

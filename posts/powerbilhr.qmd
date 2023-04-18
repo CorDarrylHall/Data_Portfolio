@@ -1,0 +1,46 @@
+---
+title: "Human Resources Analytics Dashboard"
+
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: false
+  sort-ui: false
+  filter-ui: false
+page-layout: article
+title-block-banner: false 
+image: Pbi5.png
+---
+
+The Power BI Dashboard that I am presenting here is a real-life example that I created for a previous organization. This dashboard was designed to provide an overview of key performance indicators (KPIs) and metrics that were relevant to the organization's goals and objectives.
+
+The Power BI Dashboard was divided into several sections, each presenting different types of data and insights. One section displayed revenue and expenses data, providing an at-a-glance overview of the organization's financial performance. Another section focused on sales data, with information about top-selling products, sales by region, and sales trends over time.
+
+The dashboard also included a section that provided a summary of customer feedback and satisfaction ratings, which was crucial for the organization's customer-centric approach. There was a separate section that showed employee engagement and retention rates, which is a critical metric for measuring the effectiveness of human resources strategies.
+
+The Power BI Dashboard was designed to be interactive and user-friendly, allowing users to drill down into the data and explore different perspectives. Users could filter the data by time period, region, or product, allowing them to focus on specific areas of interest.
+
+Overall, the Power BI Dashboard was a valuable tool for the organization, enabling decision-makers to monitor performance, identify trends, and make data-driven decisions. It provided a comprehensive view of the organization's operations, from financials to customer and employee satisfaction, allowing the organization to take a holistic approach to performance management.
+
+![](images/HRS.png)
+
+- HR summary that includes workforce summarized by ethnicity, gender, and retention trends and provides an overview of the demographic makeup of an organization's workforce, as well as trends related to employee retention.
+
+The summary includes data on the number and percentage of employees within various ethnic and gender categories, as well as any relevant trends or changes in those categories over time. This information can help management assess the organization's diversity and inclusion efforts and identify potential areas for improvement.
+
+Additionally, the summary includes data on employee retention, such as turnover rates, average tenure, and reasons for employee departures. This information can help management identify patterns or issues related to employee satisfaction and engagement, and develop strategies to improve retention and reduce turnover.
+
+Overall, this HR summary that includes workforce summarized by ethnicity, gender, and retention trends is a valuable tool for organizations to track and analyze key workforce demographics and trends, and make informed decisions to improve diversity, inclusion, and employee retention.
+
+![](images/Terms.png)
+
+-   Terminations Summary provides an overview of employee terminations within this organization over a specific period of time. The summary includes data on the number and percentage of employees who were terminated, as well as the reasons for their termination.
+
+The reasons for termination may include voluntary resignations, involuntary dismissals, retirement, or other factors. The summary also provides additional details about the circumstances surrounding each termination.
+
+By analyzing this data, management can identify potential areas for improvement in employee engagement, performance management, or other key HR processes. Additionally, a terminations summary can help organizations comply with legal requirements related to employee record-keeping and reporting.
+
+![](images/Talent.png)
+
+-   Talent Summary provides an overview of an organization's talent management data and trends, with the goal of using data-driven insights to make informed decisions about talent acquisition, development, and retention.

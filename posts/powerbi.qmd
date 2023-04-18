@@ -1,0 +1,36 @@
+---
+title: "Offer Analysis Dashboard"
+
+listing:
+  contents: posts
+  sort: "date desc"
+  type: grid
+  categories: true
+  sort-ui: false
+  filter-ui: false
+page-layout: article
+title-block-banner: false 
+image: Pbi3.png
+---
+
+The Power BI Dashboard that I am presenting here is a real-life example that I created for a previous organization. This dashboard was designed to provide an overview of key performance indicators (KPIs) and metrics that were relevant to the organization's goals and objectives.
+
+The Power BI Dashboard was divided into several sections, each presenting different types of data and insights. One section displayed revenue and expenses data, providing an at-a-glance overview of the organization's financial performance. Another section focused on sales data, with information about top-selling products, sales by region, and sales trends over time.
+
+The dashboard also included a section that provided a summary of customer feedback and satisfaction ratings, which was crucial for the organization's customer-centric approach. There was a separate section that showed employee engagement and retention rates, which is a critical metric for measuring the effectiveness of human resources strategies.
+
+The Power BI Dashboard was designed to be interactive and user-friendly, allowing users to drill down into the data and explore different perspectives. Users could filter the data by time period, region, or product, allowing them to focus on specific areas of interest.
+
+Overall, the Power BI Dashboard was a valuable tool for the organization, enabling decision-makers to monitor performance, identify trends, and make data-driven decisions. It provided a comprehensive view of the organization's operations, from financials to customer and employee satisfaction, allowing the organization to take a holistic approach to performance management.
+
+![](Offer%20Accept%20.png)
+
+-  The Offer Accept Ratio is a metric that measures the acceptance rate of job offers among different specialized groups. The metric has been designed to provide insights into the performance of internal sub-organizations, and it is calculated on a monthly basis. The Offer Accept Ratio highlights the rate at which certain groups are accepting job offers compared to other specialized groups. By analyzing this metric, organizations can gain a better understanding of how their recruitment efforts are performing and identify any potential areas for improvement. The filtered data is particularly useful as it allows for a more focused analysis, enabling organizations to gain a deeper understanding of the performance of individual sub-organizations.
+
+![](Offer%20Decline.png)
+
+-  The Offer Decline Ratio is a metric that measures the rate at which job offers are declined among different specialized groups. Similar to the Offer Accept Ratio, this metric is calculated on a monthly basis and filtered to show rates among internal sub-organizations. By analyzing the Offer Decline Ratio, organizations can gain valuable insights into the performance of their recruitment efforts and identify areas for improvement. This metric is particularly useful for understanding why certain specialized groups may be declining job offers more frequently than others. For example, it could be an indication of a mismatch between the job requirements and the skillset of the group or issues with the compensation package. By monitoring this metric on a regular basis, organizations can take proactive steps to address any issues and improve their recruitment efforts.
+
+![](Salarycompete.png)
+
+-   Salary Competitiveness is a metric that measures the extent to which an organization's job offers are competitive with what is being offered in the market. The metric is calculated based on the pay grade and job description/category, and it reflects the rate at which the organization's offers match what is being offered in the market. By analyzing this metric, organizations can gain valuable insights into the competitiveness of their compensation packages and identify any areas where they may need to adjust their offers to remain competitive. A low Salary Competitiveness score could indicate that the organization is not offering salaries that are attractive to top talent, which could lead to difficulties in recruiting and retaining employees. On the other hand, a high Salary Competitiveness score could indicate that the organization is offering attractive compensation packages that are competitive with what is being offered in the market, which can help to attract and retain top talent. By monitoring Salary Competitiveness on an ongoing basis, organizations can ensure that they remain competitive and attract the best talent in the industry.

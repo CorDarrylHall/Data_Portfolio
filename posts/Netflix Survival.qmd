@@ -1,0 +1,244 @@
+---
+title: "Netflix Survival Analysis"
+image: netflix.jpeg
+---
+
+This dataset was captured over a 2 year period starting in January 2017 and concluding in June 2019. It covers the behavior of Netflix users in the UK who adopted to have their browser activity tracked. This information is primarily from the users’ laptop and/or desktop which consists of an estimated 25% of global traffic activity.   
+
+How do filmmaker/creators know what movies to make and what audiences to target? 
+```{r}
+library(tidyverse)
+library(skimr)
+library(survival)
+library(survminer)
+library(fitdistrplus)
+
+
+thePath="/Users/Shared/Survival Analysis"
+
+df=read_csv(paste(thePath,"vodclickstream_uk_movies_03.csv",sep="/"))
+
+df2=read_csv(paste(thePath,"netflix_titles.csv",sep="/"))
+
+
+#Merging data that contains movie length to normalize watch length
+df <- merge(df,df2, by = "title")
+#Removing Seasons
+df <- subset(df, !grepl("Seasons", duration.y))
+#Removing Min and converting to a number
+df$duration.y <- as.numeric(gsub(" min", "", df$duration.y))
+#Removing values less than or equal to 0
+df <- subset(df, duration.x > 0)
+#Creating columns for analysis
+
+df <- df %>%  
+    mutate(event = ifelse(duration.x >0,1,0),
+           genres = as.factor(genres),
+           minutes_watched = duration.x/60,
+           perc_movie_watched = minutes_watched/duration.y,
+           is_action = ifelse(grepl('Action',genres),1,0),
+           is_adventure = ifelse(grepl('Adventure',genres),1,0),
+           is_comedy = ifelse(grepl('Comedy',genres),1,0),
+           is_documentary = ifelse(grepl('Documentary',genres),1,0),
+           is_drama = ifelse(grepl('Drama',genres),1,0),
+           is_horror = ifelse(grepl('Horror',genres),1,0),
+           is_thriller = ifelse(grepl('Thriller',genres),1,0),
+           is_romance = ifelse(grepl('romance',genres),1,0),
+           is_animation = ifelse(grepl('animation',genres),1,0),
+           is_crime = ifelse(grepl('Crime',genres),1,0),
+           is_scifi = ifelse(grepl('Sci-Fi',genres),1,0),
+           is_sport = ifelse(grepl('Sport',genres),1,0),
+           is_musical = ifelse(grepl('musical',genres),1,0),
+           is_fantasy = ifelse(grepl('Fantasy',genres),1,0),
+           is_mystery = ifelse(grepl('Mystery',genres),1,0),
+           is_biography = ifelse(grepl('Biography',genres),1,0),
+           is_history = ifelse(grepl('History',genres),1,0),
+           is_war = ifelse(grepl('War',genres),1,0),
+           is_western = ifelse(grepl('Western',genres),1,0),
+           is_short = ifelse(grepl('Short',genres),1,0))
+
+#Omitting the people that watched over 100% of the movie
+df$perc_movie_watched_clean <- round(ifelse(df$perc_movie_watched > 1, 1, df$perc_movie_watched),2)
+```
+
+```{r}
+survobj <- Surv(df$perc_movie_watched_clean, df$event)
+fit_action <- survfit(survobj~is_action, data = df)
+ggsurvplot(fit=fit_action, data=df,risk.table = F,conf.int=T) +
+    labs(
+        title="Netflix Movie Genre Survival Curve",
+        x="Watch Length (Minutes)") 
+surv_median(fit_action)
+```
+
+```{r}
+survobj <- Surv(df$perc_movie_watched_clean, df$event)
+fit_horror <- survfit(survobj~is_horror, data = df)
+ggsurvplot(fit=fit_horror, data=df,risk.table = F,conf.int=T, surv.median.line = 'hv') +
+    labs(
+        title="Netflix Movie Genre Survival Curve",
+        x="Watch Length (Minutes)") 
+surv_median(fit_horror)
+```
+
+```{r}
+survobj <- Surv(df$perc_movie_watched_clean, df$event)
+fit_thriller <- survfit(survobj~is_thriller, data = df)
+ggsurvplot(fit=fit_thriller, data=df,risk.table = F,conf.int=T, surv.median.line = 'hv') +
+    labs(
+        title="Netflix Movie Genre Survival Curve",
+        x="Watch Length (Minutes)") 
+surv_median(fit_thriller)
+```
+
+```{r}
+survobj <- Surv(df$perc_movie_watched_clean, df$event)
+fit_romance <- survfit(survobj~is_romance, data = df)
+ggsurvplot(fit=fit_romance, data=df,risk.table = F,conf.int=T, surv.median.line = 'hv') +
+    labs(
+        title="Netflix Movie Genre Survival Curve",
+        x="Watch Length (Minutes)") 
+surv_median(fit_romance)
+```
+
+```{r}
+survobj <- Surv(df$perc_movie_watched_clean, df$event)
+fit_animation <- survfit(survobj~is_animation, data = df)
+ggsurvplot(fit=fit_animation, data=df,risk.table = F,conf.int=T, surv.median.line = 'hv') +
+    labs(
+        title="Netflix Movie Genre Survival Curve",
+        x="Watch Length (Minutes)") 
+surv_median(fit_animation)
+```
+
+```{r}
+#animation
+survobj <- Surv(df$perc_movie_watched_clean, df$event)
+fit_animation <- survfit(survobj~is_animation, data = df)
+ggsurvplot(fit=fit_animation, data=df,risk.table = F,conf.int=T, surv.median.line = 'hv') +
+    labs(
+        title="Netflix Movie Genre Survival Curve",
+        x="Watch Length (Minutes)") 
+surv_median(fit_animation)
+```
+
+```{r}
+#Crime
+survobj <- Surv(df$perc_movie_watched_clean, df$event)
+fit_crime <- survfit(survobj~is_crime, data = df)
+ggsurvplot(fit=fit_crime, data=df,risk.table = F,conf.int=T, surv.median.line = 'hv') +
+    labs(
+        title="Netflix Movie Genre Survival Curve",
+        x="Watch Length (Minutes)") 
+surv_median(fit_crime)
+```
+
+```{r}
+#scifi
+survobj <- Surv(df$perc_movie_watched_clean, df$event)
+fit_scifi <- survfit(survobj~is_scifi, data = df)
+ggsurvplot(fit=fit_scifi, data=df,risk.table = F,conf.int=T, surv.median.line = 'hv') +
+    labs(
+        title="Netflix Movie Genre Survival Curve",
+        x="Watch Length (Minutes)") 
+surv_median(fit_scifi)
+```
+
+```{r}
+#Sport
+survobj <- Surv(df$perc_movie_watched_clean, df$event)
+fit_sport <- survfit(survobj~is_sport, data = df)
+ggsurvplot(fit=fit_sport, data=df,risk.table = F,conf.int=T, surv.median.line = 'hv') +
+    labs(
+        title="Netflix Movie Genre Survival Curve",
+        x="Watch Length (Minutes)") 
+surv_median(fit_sport)
+```
+
+```{r}
+#Musical
+survobj <- Surv(df$perc_movie_watched_clean, df$event)
+fit_musical <- survfit(survobj~is_musical, data = df)
+ggsurvplot(fit=fit_musical, data=df,risk.table = F,conf.int=T, surv.median.line = 'hv') +
+    labs(
+        title="Netflix Movie Genre Survival Curve",
+        x="Watch Length (Minutes)") 
+surv_median(fit_musical)
+```
+
+```{r}
+#Fantasy
+survobj <- Surv(df$perc_movie_watched_clean, df$event)
+fit_fantasy <- survfit(survobj~is_fantasy, data = df)
+ggsurvplot(fit=fit_fantasy, data=df,risk.table = F,conf.int=T, surv.median.line = 'hv') +
+    labs(
+        title="Netflix Movie Genre Survival Curve",
+        x="Watch Length (Minutes)") 
+surv_median(fit_fantasy)
+```
+
+```{r}
+#Mystery
+survobj <- Surv(df$perc_movie_watched_clean, df$event)
+fit_mystery <- survfit(survobj~is_mystery, data = df)
+ggsurvplot(fit=fit_mystery, data=df,risk.table = F,conf.int=T, surv.median.line = 'hv') +
+    labs(
+        title="Netflix Movie Genre Survival Curve",
+        x="Watch Length (Minutes)") 
+surv_median(fit_mystery)
+```
+
+```{r}
+#Biography
+survobj <- Surv(df$perc_movie_watched_clean, df$event)
+fit_biography <- survfit(survobj~is_biography, data = df)
+ggsurvplot(fit=fit_biography, data=df,risk.table = F,conf.int=T, surv.median.line = 'hv') +
+    labs(
+        title="Netflix Movie Genre Survival Curve",
+        x="Watch Length (Minutes)") 
+surv_median(fit_biography)
+```
+
+```{r}
+#History
+survobj <- Surv(df$perc_movie_watched_clean, df$event)
+fit_history <- survfit(survobj~is_history, data = df)
+ggsurvplot(fit=fit_history, data=df,risk.table = F,conf.int=T, surv.median.line = 'hv') +
+    labs(
+        title="Netflix Movie Genre Survival Curve",
+        x="Watch Length (Minutes)") 
+surv_median(fit_history)
+```
+
+```{r}
+#Western
+survobj <- Surv(df$perc_movie_watched_clean, df$event)
+fit_western <- survfit(survobj~is_western, data = df)
+ggsurvplot(fit=fit_western, data=df,risk.table = F,conf.int=T, surv.median.line = 'hv') +
+    labs(
+        title="Netflix Movie Genre Survival Curve",
+        x="Watch Length (Minutes)") 
+surv_median(fit_western)
+```
+
+```{r}
+#Short War
+survobj <- Surv(df$perc_movie_watched_clean, df$event)
+fit_war <- survfit(survobj~is_war, data = df)
+ggsurvplot(fit=fit_war, data=df,risk.table = F,conf.int=T, surv.median.line = 'hv') +
+    labs(
+        title="Netflix Movie Genre Survival Curve",
+        x="Watch Length (Minutes)") 
+surv_median(fit_war)
+```
+
+```{r}
+#Short
+survobj <- Surv(df$perc_movie_watched_clean, df$event)
+fit_short <- survfit(survobj~is_short, data = df)
+ggsurvplot(fit=fit_short, data=df,risk.table = F,conf.int=T, surv.median.line = 'hv') +
+    labs(
+        title="Netflix Movie Genre Survival Curve",
+        x="Watch Length (Minutes)") 
+surv_median(fit_short)
+```

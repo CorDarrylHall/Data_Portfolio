@@ -1,0 +1,78 @@
+---
+title: "Fortune 1000 Companies"
+image: fortune.png
+output: html_document
+params:
+  rank:
+    label: "Select a rank"
+    value: 1
+    input: select
+    choices:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+---
+
+The top 10 Fortune companies are generally ranked based on their total revenue, which is a measure of the company's financial success.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
+```{r}
+library(tidyverse)
+thePath="/Users/Shared/Survival Analysis"
+
+fortune1000=read_csv(paste(thePath,"Fortune_1000.csv",sep="/"))
+
+fortune1000_rank <- fortune1000[fortune1000$rank == params$rank, ]
+
+
+```
+
+```{r}
+library(dplyr)
+
+fortune1000_top10 <- fortune1000 %>% 
+  arrange(rank) %>% 
+  top_n(10, revenue) %>% 
+  knitr::kable(caption = "Top 10 companies by revenue")
+
+
+```
+
+```{r top-10-table}
+library(dplyr)
+
+fortune1000_top10 <- fortune1000 %>% 
+  arrange(rank) %>% 
+  top_n(10, revenue) 
+
+fortune1000_top10_table <- knitr::kable(fortune1000_top10, caption = "Top 10 companies by revenue")
+
+fortune1000_top10_df <- as.data.frame(fortune1000_top10)
+```
+
+```{r top-10-plot}
+library(ggplot2)
+
+ggplot(fortune1000_top10_df, aes(x = company, y = revenue/1000, fill = rank)) +
+  geom_col() +
+  coord_flip() +
+  scale_fill_gradient(low = "blue", high = "red") +
+  labs(title = "Top 10 companies by revenue",
+       x = "",
+       y = "Revenue ($ billions)",
+       fill = "Rank")
+
+```
+
+
